@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Adin Arley — B2 English Study Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700;900&amp;family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy:#0c1f3f;--blue:#1a4a8a;--sky:#2e82c8;
+    --gold:#e9a825;--gold-lt:#fef5dc;
+    --teal:#1a9e88;--teal-lt:#e0f5f1;
+    --rose:#c84040;--rose-lt:#fce8e8;
+    --plum:#6b3fa0;--plum-lt:#ede0f8;
+    --slate:#4a5568;--border:#dde8f5;--bg:#f4f7fc;--white:#ffffff;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--navy);min-height:100vh;}
+  .hero{background:linear-gradient(140deg,#07162a 0%,#0f2d58 55%,#1a4a8a 100%);padding:56px 40px 48px;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;top:-80px;right:-80px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(233,168,37,.18) 0%,transparent 70%);}
+  .hero::after{content:'';position:absolute;bottom:-60px;left:30%;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(46,130,200,.14) 0%,transparent 70%);}
+  .hero-inner{max-width:880px;margin:0 auto;position:relative;z-index:1;}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:20px;}
+  .hero h1{font-family:'Fraunces',serif;font-size:46px;color:#fff;line-height:1.08;margin-bottom:6px;}
+  .hero h1 em{color:var(--gold);font-style:normal;}
+  .hero-sub{font-size:15px;color:rgba(255,255,255,.6);font-weight:300;margin-bottom:36px;}
+  .hero-cards{display:flex;gap:16px;flex-wrap:wrap;}
+  .hcard{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 22px;text-align:center;min-width:108px;}
+  .hcard-val{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--gold);}
+  .hcard-lbl{font-size:10.5px;color:rgba(255,255,255,.5);letter-spacing:1px;text-transform:uppercase;margin-top:3px;}
+  .tabbar-wrap{background:var(--white);border-bottom:2px solid var(--border);position:sticky;top:0;z-index:200;box-shadow:0 2px 14px rgba(12,31,63,.07);}
+  .tabbar{max-width:880px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;}
+  .tabbar::-webkit-scrollbar{display:none;}
+  .tab-btn{flex-shrink:0;padding:16px 20px;font-size:13px;font-weight:500;color:var(--slate);cursor:pointer;border:none;background:none;border-bottom:3px solid transparent;font-family:'DM Sans',sans-serif;white-space:nowrap;display:flex;align-items:center;gap:7px;transition:color .2s,border-color .2s;}
+  .tab-btn:hover{color:var(--blue);}
+  .tab-btn.on{color:var(--blue);border-bottom-color:var(--gold);font-weight:600;}
+  .content{max-width:880px;margin:0 auto;padding:40px 20px 80px;}
+  .panel{display:none;}.panel.on{display:block;}
+  .banner{border-radius:18px;padding:30px 34px;margin-bottom:36px;color:#fff;position:relative;overflow:hidden;}
+  .banner::after{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.07);}
+  .banner h2{font-family:'Fraunces',serif;font-size:21px;margin-bottom:10px;position:relative;}
+  .banner p{font-size:14px;line-height:1.65;color:rgba(255,255,255,.82);position:relative;}
+  .banner-blue{background:linear-gradient(135deg,#0f2d58 0%,#1a6db8 100%);}
+  .banner-teal{background:linear-gradient(135deg,#0d5c4c 0%,#1a9e88 100%);}
+  .banner-gold{background:linear-gradient(135deg,#7a4d00 0%,#c58a10 100%);}
+  .banner-rose{background:linear-gradient(135deg,#6b1a1a 0%,#c84040 100%);}
+  .banner-plum{background:linear-gradient(135deg,#3c1f6b 0%,#6b3fa0 100%);}
+  .banner-slate{background:linear-gradient(135deg,#1e2d40 0%,#3a5070 100%);}
+  .banner-green{background:linear-gradient(135deg,#1a3d1a 0%,#2a7a2a 100%);}
+  .sec-title{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin:36px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+  .ex-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-bottom:8px;}
+  .ex-card{background:var(--white);border-radius:14px;border:1.5px solid var(--border);padding:20px 22px 18px;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s;}
+  .ex-card:hover{box-shadow:0 6px 28px rgba(12,31,63,.11);transform:translateY(-2px);}
+  .ex-card.full{grid-column:1/-1;}
+  .ex-type{font-size:10.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+  .ex-type::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;}
+  .c-grammar .ex-type{color:var(--blue);}.c-grammar .ex-type::before{background:var(--blue);}
+  .c-vocab .ex-type{color:#8a6000;}.c-vocab .ex-type::before{background:var(--gold);}
+  .c-listen .ex-type{color:var(--teal);}.c-listen .ex-type::before{background:var(--teal);}
+  .c-writing .ex-type{color:var(--rose);}.c-writing .ex-type::before{background:var(--rose);}
+  .c-speaking .ex-type{color:var(--plum);}.c-speaking .ex-type::before{background:var(--plum);}
+  .c-reading .ex-type{color:#2a6b2a;}.c-reading .ex-type::before{background:#2a8a2a;}
+  .ex-title{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.35;}
+  .ex-desc{font-size:13px;color:var(--slate);line-height:1.6;flex:1;margin-bottom:16px;}
+  .ex-link{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:#fff;padding:8px 16px;border-radius:8px;text-decoration:none;transition:background .2s,transform .1s;align-self:flex-start;}
+  .ex-link:hover{transform:translateX(2px);}
+  .ex-link::after{content:'→';}
+  .c-grammar .ex-link{background:var(--blue);}.c-grammar .ex-link:hover{background:var(--navy);}
+  .c-vocab .ex-link{background:#b07800;}.c-vocab .ex-link:hover{background:#7a5000;}
+  .c-listen .ex-link{background:var(--teal);}.c-listen .ex-link:hover{background:#0d6e5c;}
+  .c-writing .ex-link{background:var(--rose);}.c-writing .ex-link:hover{background:#942a2a;}
+  .c-speaking .ex-link{background:var(--plum);}.c-speaking .ex-link:hover{background:#4b2a80;}
+  .c-reading .ex-link{background:#2a6b2a;}.c-reading .ex-link:hover{background:#1a4a1a;}
+  .tip{background:var(--gold-lt);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:14px 18px;font-size:13.5px;color:#5a3c00;margin:24px 0 8px;line-height:1.6;}
+  .tip strong{color:#3a2600;}
+  .week-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:28px;}
+  .week-card{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:16px 18px;}
+  .week-num{font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--slate);margin-bottom:5px;}
+  .week-focus{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px;}
+  .week-time{font-size:12px;color:var(--slate);}
+  .score-row{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+  .score-label{font-size:13px;font-weight:600;min-width:120px;}
+  .score-track{flex:1;height:10px;background:var(--border);border-radius:99px;overflow:hidden;}
+  .score-fill{height:100%;border-radius:99px;}
+  .score-val{font-size:13px;font-weight:700;min-width:70px;text-align:right;}
+  .sched-table{width:100%;border-collapse:collapse;overflow:hidden;}
+  .sched-table thead{background:var(--navy);color:#fff;}
+  .sched-table th{padding:12px 16px;font-size:12px;letter-spacing:1px;text-transform:uppercase;text-align:left;font-weight:600;}
+  .sched-table td{padding:11px 16px;font-size:13.5px;border-bottom:1px solid var(--border);}
+  .sched-table tr:last-child td{border-bottom:none;}
+  .sched-table tr:nth-child(even) td{background:var(--bg);}
+  .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:20px;color:#fff;margin:1px;}
+  .tag-g{background:var(--blue);}.tag-v{background:#b07800;}.tag-l{background:var(--teal);}
+  .tag-w{background:var(--rose);}.tag-s{background:var(--plum);}.tag-r{background:#2a6b2a;}
+  .overview-scores{background:var(--white);border-radius:16px;border:1.5px solid var(--border);padding:28px 30px;margin-bottom:28px;}
+  .overview-scores h3{font-family:'Fraunces',serif;font-size:18px;margin-bottom:20px;}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px;}
+  .info-box{background:var(--white);border-radius:16px;border:1.5px solid var(--border);padding:24px 26px;}
+  .info-box h3{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:14px;}
+  .strength-list,.gap-list{list-style:none;}
+  .strength-list li,.gap-list li{padding:9px 14px;border-radius:8px;margin-bottom:8px;font-size:13.5px;line-height:1.5;display:flex;align-items:flex-start;gap:10px;}
+  .strength-list li{background:var(--teal-lt);color:#0a4a3c;}
+  .strength-list li::before{content:'✓';font-weight:700;color:var(--teal);flex-shrink:0;margin-top:1px;}
+  .gap-list li{background:var(--rose-lt);color:#5a1010;}
+  .gap-list li::before{content:'!';font-weight:700;color:var(--rose);flex-shrink:0;margin-top:1px;}
+  @media(max-width:600px){.hero h1{font-size:32px;}.two-col{grid-template-columns:1fr;}.ex-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="hero">
+<div class="hero-inner">
+<div class="hero-badge">📘 Personalized Study Plan</div>
+<h1>Hello, <em>Adin.</em><br/>Let's get to work.</h1>
+<p class="hero-sub">B2 Upper-Intermediate · English for Professional &amp; Personal Growth</p>
+<div class="hero-cards">
+<div class="hcard"><div class="hcard-val">B2</div><div class="hcard-lbl">Level</div></div>
+<div class="hcard"><div class="hcard-val">37/50</div><div class="hcard-lbl">Test Score</div></div>
+<div class="hcard"><div class="hcard-val">15/15</div><div class="hcard-lbl">Reading ⭐</div></div>
+<div class="hcard"><div class="hcard-val">16/20</div><div class="hcard-lbl">Grammar</div></div>
+<div class="hcard"><div class="hcard-val">6/15</div><div class="hcard-lbl">Vocabulary</div></div>
+<div class="hcard"><div class="hcard-val">8 wks</div><div class="hcard-lbl">Plan Length</div></div>
+</div>
+</div>
+</div>
+<div class="tabbar-wrap">
+<div class="tabbar">
+<button class="tab-btn on" onclick="show('overview',this)">🗺️ Overview</button>
+<button class="tab-btn" onclick="show('grammar',this)">📐 Grammar</button>
+<button class="tab-btn" onclick="show('vocabulary',this)">📚 Vocabulary</button>
+<button class="tab-btn" onclick="show('listening',this)">🎧 Listening</button>
+<button class="tab-btn" onclick="show('writing',this)">✍️ Writing</button>
+<button class="tab-btn" onclick="show('speaking',this)">🎙️ Speaking</button>
+<button class="tab-btn" onclick="show('reading',this)">📖 Reading</button>
+<button class="tab-btn" onclick="show('schedule',this)">📅 Schedule</button>
+</div>
+</div>
+<div class="content">
+<!-- OVERVIEW -->
+<div class="panel on" id="overview">
+<div class="banner banner-blue">
+<h2>Your Diagnostic Summary</h2>
+<p>Adin, your test results show a clear profile: your receptive skills — reading and grammar recognition — are genuinely strong. A perfect reading score is exceptional. The challenge is that your productive skills (writing, speaking) still carry patterns from Spanish. This plan is designed to close that gap in 8 focused weeks.</p>
+</div>
+<div class="overview-scores">
+<h3>Score Breakdown</h3>
+<div class="score-row"><span class="score-label">Reading</span><div class="score-track"><div class="score-fill" style="width:100%;background:var(--teal)"></div></div><span class="score-val" style="color:var(--teal)">15/15 ✓</span></div>
+<div class="score-row"><span class="score-label">Grammar</span><div class="score-track"><div class="score-fill" style="width:80%;background:var(--blue)"></div></div><span class="score-val" style="color:var(--blue)">16/20</span></div>
+<div class="score-row"><span class="score-label">Vocabulary</span><div class="score-track"><div class="score-fill" style="width:40%;background:var(--rose)"></div></div><span class="score-val" style="color:var(--rose)">6/15 ⚠</span></div>
+<div class="score-row"><span class="score-label">Writing (est.)</span><div class="score-track"><div class="score-fill" style="width:60%;background:#c07000"></div></div><span class="score-val" style="color:#c07000">B1–B2</span></div>
+</div>
+<div class="two-col">
+<div class="info-box">
+<h3>✅ Your Strengths</h3>
+<ul class="strength-list">
+<li>Perfect reading comprehension — genuinely impressive</li>
+<li>Strong grammar recognition (80%) — you understand the rules</li>
+<li>Organizes ideas logically across multiple paragraphs</li>
+<li>Expresses nuanced opinions (Task 2 on social media was well-structured)</li>
+<li>Uses connectors: "Actually," "First," "starting" — good instincts</li>
+</ul>
+</div>
+<div class="info-box">
+<h3>⚠️ Priority Focus Areas</h3>
+<ul class="gap-list">
+<li>Vocabulary is your biggest gap (40%) — needs daily attention</li>
+<li>Subject-verb agreement: "the people is" → "the people are"</li>
+<li>Pronoun confusion: "your building" → "its building" (for a city)</li>
+<li>Tense accuracy: "I could want to know" → "I wanted to visit"</li>
+<li>Spelling: building, weather, responsibility, in (not "en")</li>
+<li>False cognates from Spanish (e.g. "any problem" from "cualquier")</li>
+</ul>
+</div>
+</div>
+<div class="sec-title">Your 8-Week Plan at a Glance</div>
+<div class="week-grid">
+<div class="week-card"><div class="week-num">Weeks 1–2</div><div class="week-focus">Grammar Core</div><div class="week-time">Agreement, pronouns, tenses</div></div>
+<div class="week-card"><div class="week-num">Weeks 3–4</div><div class="week-focus">Vocabulary Blitz</div><div class="week-time">Word families, collocations, spelling</div></div>
+<div class="week-card"><div class="week-num">Weeks 5–6</div><div class="week-focus">Writing &amp; Speaking</div><div class="week-time">Accuracy, register, fluency</div></div>
+<div class="week-card"><div class="week-num">Weeks 7–8</div><div class="week-focus">Integration &amp; Review</div><div class="week-time">Full-skill practice + B2 mock test</div></div>
+</div>
+<div class="tip"><strong>💡 Your goal context:</strong> You said you want English for your job and as a personal goal — "for me." That personal ownership is the most powerful motivator there is. This plan includes professional vocabulary, workplace writing, and real-world listening so every skill transfers directly to your daily life.</div>
+</div>
+<!-- GRAMMAR -->
+<div class="panel" id="grammar">
+<div class="banner banner-blue">
+<h2>📐 Grammar</h2>
+<p>You scored 16/20 — you clearly understand grammar rules when you see them. The challenge is applying them automatically when you write and speak. These exercises target exactly the patterns where errors appeared: agreement, pronouns, tenses, and conditionals.</p>
+</div>
+<div class="sec-title">Week 1 · Subject-Verb Agreement &amp; Articles</div>
+<div class="ex-grid">
+<div class="ex-card c-grammar">
+<div class="ex-type">Grammar · B1–B2</div>
+<div class="ex-title">Subject-Verb Agreement Exercises</div>
+<div class="ex-desc">Targets exactly your error: "the people is" → "the people are." Multiple interactive exercises covering collective nouns and tricky agreement cases.</div>
+<a class="ex-link" href="https://www.english-exercises.org/makeagame/viewgame.asp?id=2491" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+<div class="ex-card c-grammar">
+<div class="ex-type">Grammar · B1–B2</div>
+<div class="ex-title">Subject-Verb Agreement — GrammarBank</div>
+<div class="ex-desc">Clear practice with instant feedback. Covers singular/plural agreement with people, everyone, none, neither, and other tricky cases.</div>
+<a class="ex-link" href="https://www.grammarbank.com/subject-verb-agreement-exercises.html" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+<div class="ex-card c-grammar">
+<div class="ex-type">Grammar · B1</div>
+<div class="ex-title">Articles: a, an, the — British Council</div>
+<div class="ex-desc">Practice using articles correctly when writing about cities, places, and general concepts — a common trouble area for Spanish speakers.</div>
+<a class="ex-link" href="https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+<div class="ex-card c-grammar">
+<div class="ex-type">Grammar · B1</div>
+<div class="ex-title">Articles Practice — Perfect English Grammar</div>
+<div class="ex-desc">Focused exercises on a, an, and the in context. Build the habit of using articles correctly every time you write or speak.</div>
+<a class="ex-link" href="https://www.perfect-english-grammar.com/articles-exercise-4.html" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+</div>
+<div class="sec-title">Week 1 · Pronouns &amp; Possessives</div>
+<div class="ex-grid">
+<div class="ex-card c-grammar">
+<div class="ex-type">Grammar · B1</div>
+<div class="ex-title">Possessives: its vs your vs their</div>
+<div class="ex-desc">Directly addresses your error: "i love your building tower" (about a city) → "I love its tower." Full exercises on all possessive forms.</div>
+<a class="ex-link" href="https://www.perfect-english-grammar.com/possessives-exercise-1.html" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+<div class="ex-card c-grammar">
+<div class="ex-type">Grammar · B1</div>
+<div class="ex-title">Subject &amp; Object Pronouns — Perfect English Grammar</div>
+<div class="ex-desc">Full practice covering he/she/it/they and their possessive forms (his/her/its/their) in real sentence contexts with instant feedback.</div>
+<a class="ex-link" href="https://www.perfect-english-grammar.com/subject-object-pronouns-exercise-1.html" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+<div class="ex-card c-grammar">
+<div class="ex-type">Grammar · B1–B2</div>
+<div class="ex-title">All Pronoun Types — British Council B1-B2</div>
+<div class="ex-desc">Subject, object, possessive, and reflexive pronouns — all in one clear section with explanations and interactive exercises.</div>
+<a class="ex-link" href="https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+</div>
+<div class="sec-title">Week 2 · Tenses &amp; Modal Verbs</div>
+<div class="ex-grid">
+<div class="ex-card c-grammar">
+<div class="ex-type">Grammar · B1–B2</div>
+<div class="ex-title">Past Simple Exercises — Perfect English Grammar</div>
+<div class="ex-desc">Solidify the past simple tense — the main tense for narrating your trip to Spain and Paris accurately. Four exercises from positive to mixed forms.</div>
+<a class="ex-link" href="https://www.perfect-english-grammar.com/past-simple-exercise-1.html" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+<div class="ex-card c-grammar">
+<div class="ex-type">Grammar · B1</div>
+<div class="ex-title">Present Perfect vs Past Simple</div>
+<div class="ex-desc">The most common tense error for Spanish speakers. Know exactly when to use "I went" vs "I have gone" — crucial for both writing and professional communication.</div>
+<a class="ex-link" href="https://www.perfect-english-grammar.com/present-perfect-or-past-simple-exercise-1.html" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+<div class="ex-card c-grammar">
+<div class="ex-type">Grammar · B2</div>
+<div class="ex-title">Modal Verbs Exercises (A2–B2) — English Exercises</div>
+<div class="ex-desc">13 exercises covering all modals. Fixes "I could want to know" → "I wanted to visit." Teaches when modals belong in a sentence and when they don't. No login required.</div>
+<a class="ex-link" href="https://www.english-exercises.org/makeagame/viewgame.asp?id=2966" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+<div class="ex-card c-grammar">
+<div class="ex-type">Grammar · B2</div>
+<div class="ex-title">Mixed Tenses — Perfect English Grammar</div>
+<div class="ex-desc">Use multiple tenses correctly in one passage. Perfect for writing about past events while commenting in the present — essential for professional writing.</div>
+<a class="ex-link" href="https://www.perfect-english-grammar.com/mixed-tense-exercise-1.html" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+</div>
+<div class="sec-title">Week 2 · Conditionals &amp; Connectors</div>
+<div class="ex-grid">
+<div class="ex-card c-grammar">
+<div class="ex-type">Grammar · B2</div>
+<div class="ex-title">First &amp; Second Conditionals — PractisingEnglish</div>
+<div class="ex-desc">Your Task 2 already used conditional thinking ("if you know how to use it..."). Now make the structure accurate and natural-sounding.</div>
+<a class="ex-link" href="https://www.practisingenglish.com/english-grammar-exercises/conditionals_2.htm" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+<div class="ex-card c-grammar">
+<div class="ex-type">Grammar · B2</div>
+<div class="ex-title">Conditionals with Modal Verbs — English Exercises</div>
+<div class="ex-desc">Practice using can, could, might, and should inside conditional sentences. This is the more advanced pattern that appears in professional writing and Task 2-type questions.</div>
+<a class="ex-link" href="https://www.english-exercises.org/makeagame/viewgame.asp?id=6406" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+<div class="ex-card c-grammar">
+<div class="ex-type">Grammar · B2</div>
+<div class="ex-title">Linking Words &amp; Connectors — British Council</div>
+<div class="ex-desc">Upgrade from "and," "but," "cause" to "however," "as a result," "in contrast," "therefore" — the words that move writing from B1 to B2.</div>
+<a class="ex-link" href="https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+<div class="ex-card c-grammar full">
+<div class="ex-type">Grammar · B2 · Comprehensive Hub</div>
+<div class="ex-title">British Council B1–B2 Grammar — Full Collection</div>
+<div class="ex-desc">The full library of B1–B2 grammar topics from the British Council: subject-verb agreement, articles, pronouns, tenses, conditionals, and more. Use this to browse any grammar topic you need to review — all in one place, all free and interactive.</div>
+<a class="ex-link" href="https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar" rel="noopener noreferrer" target="_blank">Open Grammar Hub</a>
+</div>
+</div>
+<div class="tip"><strong>💡 Grammar habit:</strong> After each exercise, write 2–3 original sentences using the structure you just practiced — about your own life or work. This is the step that converts recognition into real use.</div>
+</div>
+<!-- VOCABULARY -->
+<div class="panel" id="vocabulary">
+<div class="banner banner-gold">
+<h2>📚 Vocabulary</h2>
+<p>This is your #1 priority. With 6/15 (40%), vocabulary is where the most points — and the most fluency — are waiting. The goal is not just learning more words, but learning the right words: collocations, word families, and vocabulary that sounds natural in professional contexts.</p>
+</div>
+<div class="sec-title">Daily Flashcard Practice (Every Day)</div>
+<div class="ex-grid">
+<div class="ex-card c-vocab">
+<div class="ex-type">Vocabulary · Daily · Free App</div>
+<div class="ex-title">Quizlet — B2 Vocabulary Sets</div>
+<div class="ex-desc">Use ready-made B2 word sets with spaced repetition. Study at least 10 new words per day. Available on mobile — perfect for commuting or lunch breaks.</div>
+<a class="ex-link" href="https://quizlet.com/subject/b2-vocabulary/" rel="noopener noreferrer" target="_blank">Open Quizlet</a>
+</div>
+<div class="ex-card c-vocab">
+<div class="ex-type">Vocabulary · Daily · Adaptive</div>
+<div class="ex-title">Vocabulary.com — Upper-Intermediate</div>
+<div class="ex-desc">Adapts to what you already know and pushes you forward. Great for building precision — knowing not just a word, but exactly when and how to use it.</div>
+<a class="ex-link" href="https://www.vocabulary.com/lists/52473" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+<div class="ex-card c-vocab">
+<div class="ex-type">Vocabulary · Daily · Free App</div>
+<div class="ex-title">Anki — Free Spaced Repetition</div>
+<div class="ex-desc">The most powerful spaced repetition tool available. Download a B2 English deck and study 15 minutes a day — results are dramatic within weeks. Completely free.</div>
+<a class="ex-link" href="https://apps.ankiweb.net/" rel="noopener noreferrer" target="_blank">Open Anki</a>
+</div>
+</div>
+<div class="sec-title">Word Families &amp; Formation</div>
+<div class="ex-grid">
+<div class="ex-card c-vocab">
+<div class="ex-type">Vocabulary · B2</div>
+<div class="ex-title">Word Formation Exercises — GrammarBank</div>
+<div class="ex-desc">Learn how words change form: "responsible → responsibility → responsibly." You wrote "responsability" — this series of 7 exercises fixes that permanently.</div>
+<a class="ex-link" href="https://www.grammarbank.com/word-formation.html" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+<div class="ex-card c-vocab">
+<div class="ex-type">Vocabulary · B2</div>
+<div class="ex-title">Word Formation — Perfect English Grammar</div>
+<div class="ex-desc">Focused exercises on adding prefixes and suffixes to build new words. Learn noun/verb/adjective/adverb forms of the same root word.</div>
+<a class="ex-link" href="https://www.perfect-english-grammar.com/word-formation.html" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+<div class="ex-card c-vocab">
+<div class="ex-type">Vocabulary · B2</div>
+<div class="ex-title">Suffixes Quiz — EnglishClub</div>
+<div class="ex-desc">Online quiz on common English suffixes (-ful, -ness, -tion, -ment, -ly). Multiplies your vocabulary count by teaching you to build new words from ones you already know.</div>
+<a class="ex-link" href="https://www.englishclub.com/vocabulary/suffixes-quiz.php" rel="noopener noreferrer" target="_blank">Open Quiz</a>
+</div>
+<div class="ex-card c-vocab">
+<div class="ex-type">Vocabulary · B2</div>
+<div class="ex-title">Prefixes &amp; Suffixes — Interactive Exercises</div>
+<div class="ex-desc">Add un-, dis-, re-, -tion, -ness, -ful to words you already know and instantly multiply your vocabulary. Includes instant answer checking.</div>
+<a class="ex-link" href="https://www.myenglishpages.com/english/vocabulary-exercise-prefixes-suffixes.php" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+</div>
+<div class="sec-title">Collocations (Words That Go Together)</div>
+<div class="ex-grid">
+<div class="ex-card c-vocab">
+<div class="ex-type">Vocabulary · B2</div>
+<div class="ex-title">Verb + Noun Collocations — UsingEnglish</div>
+<div class="ex-desc">"Make a decision," "take a trip," "do research" — not "do a decision." Collocations are what separate intermediate from advanced speakers. Practice them here.</div>
+<a class="ex-link" href="https://www.usingenglish.com/quizzes/295.html" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+<div class="ex-card c-vocab">
+<div class="ex-type">Vocabulary · Reference Tool</div>
+<div class="ex-title">Collocation Dictionary — ozdic.com</div>
+<div class="ex-desc">Look up any word and see exactly what words naturally go with it. Bookmark this — use it every time you write. An essential tool for reaching B2 accuracy.</div>
+<a class="ex-link" href="https://www.ozdic.com/" rel="noopener noreferrer" target="_blank">Open Dictionary</a>
+</div>
+<div class="ex-card c-vocab">
+<div class="ex-type">Vocabulary · B2</div>
+<div class="ex-title">Phrasal Verbs — Perfect English Grammar</div>
+<div class="ex-desc">Phrasal verbs are essential for sounding natural. "Find out," "set up," "carry on," "give up" — taught here in real sentences, not isolated lists.</div>
+<a class="ex-link" href="https://www.perfect-english-grammar.com/phrasal-verbs.html" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+</div>
+<div class="sec-title">Spelling Practice</div>
+<div class="ex-grid">
+<div class="ex-card c-vocab">
+<div class="ex-type">Spelling · B1–B2</div>
+<div class="ex-title">Spelling Test — SpellQuiz</div>
+<div class="ex-desc">Work on exactly the words you misspelled: "building," "weather," "responsibility." Covers the most frequent English spelling errors for intermediate learners.</div>
+<a class="ex-link" href="https://spellquiz.com/spelling-test" rel="noopener noreferrer" target="_blank">Open Quiz</a>
+</div>
+<div class="ex-card c-vocab">
+<div class="ex-type">Spelling · Practice Game</div>
+<div class="ex-title">Spelling Bee Challenge — Merriam-Webster</div>
+<div class="ex-desc">A fun but effective way to train your eye for correct spelling. Builds the habit of noticing when a word "doesn't look right" — a critical writing skill.</div>
+<a class="ex-link" href="https://www.merriam-webster.com/word-games/spelling-bee-challenge" rel="noopener noreferrer" target="_blank">Open Game</a>
+</div>
+</div>
+<div class="sec-title">Professional &amp; Topic Vocabulary</div>
+<div class="ex-grid">
+<div class="ex-card c-vocab">
+<div class="ex-type">Vocabulary · Professional · BBC</div>
+<div class="ex-title">The English We Speak — BBC Learning</div>
+<div class="ex-desc">Short weekly episodes teaching natural professional English phrases in real-world contexts. Perfect for building the vocabulary you actually need at work.</div>
+<a class="ex-link" href="https://www.bbc.co.uk/learningenglish/english/features/the-english-we-speak" rel="noopener noreferrer" target="_blank">Open Resource</a>
+</div>
+<div class="ex-card c-vocab">
+<div class="ex-type">Vocabulary · Topic: Technology</div>
+<div class="ex-title">Technology &amp; Social Media Vocabulary — Quizlet</div>
+<div class="ex-desc">Expands the topic of your Task 2 writing. Learn precise terms for technology, online behavior, and digital communication at B2 level.</div>
+<a class="ex-link" href="https://quizlet.com/subject/social-media-vocabulary/" rel="noopener noreferrer" target="_blank">Open Quizlet</a>
+</div>
+<div class="ex-card c-vocab">
+<div class="ex-type">Vocabulary · False Cognates</div>
+<div class="ex-title">Spanish-English False Friends — FluentU Guide</div>
+<div class="ex-desc">Fix errors like "any problem" (from "cualquier"), "actual" (means real, not current in English). A must-read guide for Spanish speakers learning English.</div>
+<a class="ex-link" href="https://www.fluentu.com/blog/english-esp/false-cognates-in-english-and-spanish/" rel="noopener noreferrer" target="_blank">Open Guide</a>
+</div>
+<div class="ex-card c-vocab">
+<div class="ex-type">Vocabulary · Describing Places</div>
+<div class="ex-title">Describing Cities &amp; Places — Quizlet</div>
+<div class="ex-desc">Better words than "cute" and "nice" for describing places — directly related to your Task 1 travel email. Essential vocabulary for both writing and speaking.</div>
+<a class="ex-link" href="https://quizlet.com/subject/describing-places-english/" rel="noopener noreferrer" target="_blank">Open Quizlet</a>
+</div>
+</div>
+<div class="tip"><strong>💡 Vocabulary habit:</strong> Every time you learn a new word, write one sentence with it about something real in your life. Words you use stay in memory — words you only read are forgotten within a few days.</div>
+</div>
+<!-- LISTENING -->
+<div class="panel" id="listening">
+<div class="banner banner-teal">
+<h2>🎧 Listening Comprehension</h2>
+<p>Listening is the fastest way to improve both vocabulary and sense of correct grammar. Your brain absorbs patterns from everything it hears. For professional English goals, focus on real-world content: podcasts, TED Talks, and workplace conversations — not just textbook audio.</p>
+</div>
+<div class="sec-title">Structured B2 Listening Exercises</div>
+<div class="ex-grid">
+<div class="ex-card c-listen">
+<div class="ex-type">Listening · B2 · Official</div>
+<div class="ex-title">British Council B2 Listening Practice</div>
+<div class="ex-desc">High-quality audio clips at exactly B2 level with comprehension questions. Covers business interviews, presentations, podcasts, and lectures. Start with the business interview episode.</div>
+<a class="ex-link" href="https://learnenglish.britishcouncil.org/free-resources/listening/b2" rel="noopener noreferrer" target="_blank">Open Exercises</a>
+</div>
+<div class="ex-card c-listen">
+<div class="ex-type">Listening · B2 · Business Focus</div>
+<div class="ex-title">Business Interview — British Council</div>
+<div class="ex-desc">Listen to a business interview about an app startup. Directly relevant to professional English goals — covers vocabulary used in real work presentations and interviews.</div>
+<a class="ex-link" href="https://learnenglish.britishcouncil.org/skills/listening/b2-listening/business-interview" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+<div class="ex-card c-listen">
+<div class="ex-type">Listening · B2 · News</div>
+<div class="ex-title">Business News — British Council</div>
+<div class="ex-desc">Listen to a business news broadcast and answer comprehension questions. Builds professional listening vocabulary and news English comprehension in one exercise.</div>
+<a class="ex-link" href="https://learnenglish.britishcouncil.org/skills/listening/b2-listening/business-news" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+<div class="ex-card c-listen">
+<div class="ex-type">Listening · B2 · Audio Zone</div>
+<div class="ex-title">British Council Audio Zone — Upper-Intermediate</div>
+<div class="ex-desc">A wide variety of authentic audio recordings for upper-intermediate and advanced learners. Topics include music, travel, social media, and personal stories.</div>
+<a class="ex-link" href="https://learnenglish.britishcouncil.org/general-english/audio-series" rel="noopener noreferrer" target="_blank">Open Audio Zone</a>
+</div>
+</div>
+<div class="sec-title">TED Talks (Authentic English)</div>
+<div class="ex-grid">
+<div class="ex-card c-listen">
+<div class="ex-type">Listening · Authentic · B2</div>
+<div class="ex-title">TED-Ed — Educational Short Talks</div>
+<div class="ex-desc">5–10 minute talks with subtitles. Watch once without subtitles, then again with English subtitles. Write down 5 new words per video. Free and endlessly varied.</div>
+<a class="ex-link" href="https://ed.ted.com/" rel="noopener noreferrer" target="_blank">Open TED-Ed</a>
+</div>
+<div class="ex-card c-listen">
+<div class="ex-type">Listening · Authentic · B2</div>
+<div class="ex-title">TED Talks — Technology &amp; Society</div>
+<div class="ex-desc">Related to your Task 2 topic (social media). Listen to talks about technology's impact on people and society — great for both listening and professional vocabulary.</div>
+<a class="ex-link" href="https://www.ted.com/topics/technology" rel="noopener noreferrer" target="_blank">Open TED Talks</a>
+</div>
+<div class="ex-card c-listen">
+<div class="ex-type">Listening · Word on the Street · B2</div>
+<div class="ex-title">Word on the Street — British Council</div>
+<div class="ex-desc">Video-based listening activities at upper-intermediate level with comprehension tasks. Authentic British English in real-world situations.</div>
+<a class="ex-link" href="https://learnenglish.britishcouncil.org/general-english/video-series/word-on-the-street" rel="noopener noreferrer" target="_blank">Open Resource</a>
+</div>
+</div>
+<div class="sec-title">Podcasts for English Learners</div>
+<div class="ex-grid">
+<div class="ex-card c-listen">
+<div class="ex-type">Listening · Podcast · B1–B2</div>
+<div class="ex-title">BBC 6-Minute English</div>
+<div class="ex-desc">Short transcript-available episodes on real topics: technology, work, environment. 6 minutes a day builds a consistent listening habit that compounds over weeks.</div>
+<a class="ex-link" href="https://www.bbc.co.uk/learningenglish/english/features/6-minute-english" rel="noopener noreferrer" target="_blank">Open Podcast</a>
+</div>
+<div class="ex-card c-listen">
+<div class="ex-type">Listening · Podcast · B2</div>
+<div class="ex-title">All Ears English Podcast</div>
+<div class="ex-desc">Natural, conversational English focused on real communication. Excellent for improving comprehension of how people actually talk in professional environments.</div>
+<a class="ex-link" href="https://www.allearsenglish.com/" rel="noopener noreferrer" target="_blank">Open Podcast</a>
+</div>
+<div class="ex-card c-listen">
+<div class="ex-type">Listening · Podcast · With Transcripts</div>
+<div class="ex-title">Podcasts in English — Intermediate Level</div>
+<div class="ex-desc">Designed specifically for B2 learners. Comes with transcripts and vocabulary exercises — listen, read, and practice all in one place.</div>
+<a class="ex-link" href="https://www.podcastsinenglish.com/intermediate-podcasts.html" rel="noopener noreferrer" target="_blank">Open Podcast</a>
+</div>
+</div>
+<div class="sec-title">Dictation Training</div>
+<div class="ex-grid">
+<div class="ex-card c-listen">
+<div class="ex-type">Listening · Dictation · Interactive</div>
+<div class="ex-title">Lyrics Training — Dictation via Music</div>
+<div class="ex-desc">Listen to songs and type what you hear word by word. Trains both listening accuracy and spelling simultaneously — highly engaging and surprisingly effective.</div>
+<a class="ex-link" href="https://lyricstraining.com/en" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+<div class="ex-card c-listen">
+<div class="ex-type">Listening · Dictation · Classic</div>
+<div class="ex-title">Listen &amp; Write — Online Dictation</div>
+<div class="ex-desc">Traditional dictation: listen to a sentence, pause, write it, check. Builds accuracy, spelling, and listening focus in one focused exercise.</div>
+<a class="ex-link" href="https://listen-and-write.com/" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+</div>
+<div class="tip"><strong>💡 Listening habit:</strong> 15 minutes of focused listening beats 2 hours of background noise every time. Pause, replay, notice one new word or phrase per session, and write it down.</div>
+</div>
+<!-- WRITING -->
+<div class="panel" id="writing">
+<div class="banner banner-rose">
+<h2>✍️ Writing</h2>
+<p>Your writing shows communicative confidence — you have things to say and you say them. Now the work is accuracy: making your writing match the level of your ideas. Focus on the specific patterns from your assessment: agreement, pronoun choice, tense consistency, and complete sentence endings.</p>
+</div>
+<div class="sec-title">Error Correction Exercises</div>
+<div class="ex-grid">
+<div class="ex-card c-writing">
+<div class="ex-type">Writing · Error Correction</div>
+<div class="ex-title">Error Correction — Perfect English Grammar</div>
+<div class="ex-desc">Read sentences with mistakes, find the error, and correct it. Trains proofreading — helping you catch your own mistakes before submitting work or sending emails.</div>
+<a class="ex-link" href="https://www.perfect-english-grammar.com/error-correction.html" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+<div class="ex-card c-writing">
+<div class="ex-type">Writing · Grammar in Context</div>
+<div class="ex-title">Subject-Verb Agreement in Sentences — GrammarBook</div>
+<div class="ex-desc">Correcting agreement errors in full sentences — different from just choosing answers. Seeing the fix in writing reinforces the habit for your own writing.</div>
+<a class="ex-link" href="https://www.grammarbook.com/grammar/subjectVerbAgree.asp" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+<div class="ex-card c-writing">
+<div class="ex-type">Writing · B2 Practice</div>
+<div class="ex-title">B2 Writing Practice — British Council</div>
+<div class="ex-desc">Practice B2-level writing tasks including emails, essays, and reports with model answers. Compare your writing to the model to see exactly what to improve.</div>
+<a class="ex-link" href="https://learnenglish.britishcouncil.org/skills/writing/b2-writing" rel="noopener noreferrer" target="_blank">Open Exercises</a>
+</div>
+</div>
+<div class="sec-title">Professional Email Writing</div>
+<div class="ex-grid">
+<div class="ex-card c-writing">
+<div class="ex-type">Writing · Professional · B2</div>
+<div class="ex-title">How to Write a Formal Email — British Council</div>
+<div class="ex-desc">Your Task 1 was a friendly email — good. Now learn when and how to shift to formal register for work emails. Essential for your professional English goals.</div>
+<a class="ex-link" href="https://learnenglish.britishcouncil.org/skills/writing/b2-writing/formal-email" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+<div class="ex-card c-writing">
+<div class="ex-type">Writing · Email Phrases · Professional</div>
+<div class="ex-title">Business Email Phrases &amp; Templates</div>
+<div class="ex-desc">Ready-to-use opening, body, and closing phrases for professional emails in English. Reduces errors and builds confidence in workplace writing immediately.</div>
+<a class="ex-link" href="https://www.businessenglishresources.com/learn-english-for-business/student-section/business-english-email/" rel="noopener noreferrer" target="_blank">Open Resource</a>
+</div>
+<div class="ex-card c-writing">
+<div class="ex-type">Writing · Self-Correction Tool · Free</div>
+<div class="ex-title">LanguageTool — Free Grammar Checker</div>
+<div class="ex-desc">Write a paragraph, paste it here, and see grammar and spelling errors highlighted with explanations. Use as a self-correction tool — not a crutch. Always fix manually before checking.</div>
+<a class="ex-link" href="https://languagetool.org/" rel="noopener noreferrer" target="_blank">Open Tool</a>
+</div>
+</div>
+<div class="sec-title">Opinion Writing &amp; Cohesion</div>
+<div class="ex-grid">
+<div class="ex-card c-writing">
+<div class="ex-type">Writing · B2 · Opinion Structure</div>
+<div class="ex-title">B2 Opinion &amp; Essay Writing — British Council</div>
+<div class="ex-desc">You already have good instincts for expressing opinions (Task 2). Now structure them: introduction → argument → counter-argument → conclusion. Model answers included.</div>
+<a class="ex-link" href="https://learnenglish.britishcouncil.org/skills/writing/b2-writing" rel="noopener noreferrer" target="_blank">Open Guide</a>
+</div>
+<div class="ex-card c-writing">
+<div class="ex-type">Writing · Discourse Markers</div>
+<div class="ex-title">Linking Words Exercises — Perfect English Grammar</div>
+<div class="ex-desc">Upgrade from "and," "but," "cause" to "however," "as a result," "in contrast," "therefore." These connectors are what B2 writing looks and sounds like.</div>
+<a class="ex-link" href="https://www.perfect-english-grammar.com/linking-words-exercise.html" rel="noopener noreferrer" target="_blank">Open Exercise</a>
+</div>
+</div>
+<div class="tip"><strong>💡 Writing habit:</strong> Write one short paragraph (4–6 sentences) every day in English — about your day, an opinion, or a plan. Then reread it and fix one thing. This 10-minute daily habit builds more accuracy than any single exercise.</div>
+</div>
+<!-- SPEAKING -->
+<div class="panel" id="speaking">
+<div class="banner banner-plum">
+<h2>🎙️ Speaking</h2>
+<p>Speaking wasn't formally evaluated, but given your professional goal it's essential. Many of your grammar improvements in writing will automatically improve your speaking too. The focus here is fluency, pronunciation, and confidence using English at work and in daily life.</p>
+</div>
+<div class="sec-title">Pronunciation &amp; Fluency</div>
+<div class="ex-grid">
+<div class="ex-card c-speaking">
+<div class="ex-type">Speaking · Pronunciation · B2</div>
+<div class="ex-title">B2 Speaking Practice — British Council</div>
+<div class="ex-desc">Video-based speaking exercises with useful phrases for challenging ideas, giving advice, and persuading — real professional communication scenarios.</div>
+<a class="ex-link" href="https://learnenglish.britishcouncil.org/skills/speaking/b2-speaking" rel="noopener noreferrer" target="_blank">Open Resource</a>
+</div>
+<div class="ex-card c-speaking">
+<div class="ex-type">Speaking · Pronunciation · Video</div>
+<div class="ex-title">Rachel's English — Pronunciation Videos</div>
+<div class="ex-desc">One of the best resources for American English pronunciation. Clear explanations of sounds, stress, and connected speech with video demonstrations.</div>
+<a class="ex-link" href="https://rachelsenglish.com/free-videos/" rel="noopener noreferrer" target="_blank">Open Videos</a>
+</div>
+<div class="ex-card c-speaking">
+<div class="ex-type">Speaking · AI Coach · App</div>
+<div class="ex-title">Elsa Speak — AI Pronunciation Coach</div>
+<div class="ex-desc">Speak into your phone and get instant AI feedback on pronunciation accuracy. Identifies specific sounds you struggle with. Free version available — widely used by B2 learners.</div>
+<a class="ex-link" href="https://elsaspeak.com/" rel="noopener noreferrer" target="_blank">Open App</a>
+</div>
+</div>
+<div class="sec-title">Conversation Practice</div>
+<div class="ex-grid">
+<div class="ex-card c-speaking">
+<div class="ex-type">Speaking · Language Exchange · Free</div>
+<div class="ex-title">Tandem — Language Exchange App</div>
+<div class="ex-desc">Find a native English speaker who wants to learn Spanish. You help each other — free conversation practice with real people. Great for professional English topics.</div>
+<a class="ex-link" href="https://www.tandem.net/" rel="noopener noreferrer" target="_blank">Open App</a>
+</div>
+<div class="ex-card c-speaking">
+<div class="ex-type">Speaking · Self-Practice · B2</div>
+<div class="ex-title">B2 Discussion Questions — ThoughtCo</div>
+<div class="ex-desc">A large collection of B2-level discussion questions on many topics. Record yourself answering one per day, then listen back and identify one thing to improve.</div>
+<a class="ex-link" href="https://www.thoughtco.com/questions-for-conversation-1210038" rel="noopener noreferrer" target="_blank">Open Topics</a>
+</div>
+<div class="ex-card c-speaking">
+<div class="ex-type">Speaking · Guided · B2</div>
+<div class="ex-title">Speakly — Structured Speaking Practice</div>
+<div class="ex-desc">Guided speaking exercises organized by situation: work meeting, opinion discussion, travel scenarios. Great for building professional speaking confidence systematically.</div>
+<a class="ex-link" href="https://www.speakly.me/" rel="noopener noreferrer" target="_blank">Open App</a>
+</div>
+</div>
+<div class="sec-title">Shadowing Technique (Advanced Fluency)</div>
+<div class="ex-grid">
+<div class="ex-card c-speaking full">
+<div class="ex-type">Speaking · Technique · B2–C1</div>
+<div class="ex-title">Shadowing with BBC News Review</div>
+<div class="ex-desc">Shadowing = listen to a native speaker, pause, and immediately repeat exactly what they said — same words, same rhythm, same intonation. Do this for 10 minutes with BBC News Review episodes. Uses real news in clear, standard English — perfect for professional goals. This technique is used by translators and language professionals worldwide. 10 minutes a day of focused shadowing is transformative.</div>
+<a class="ex-link" href="https://www.bbc.co.uk/learningenglish/english/features/newsreview" rel="noopener noreferrer" target="_blank">Open BBC News Review</a>
+</div>
+</div>
+<div class="tip"><strong>💡 Speaking habit:</strong> Talk to yourself in English. On your commute, narrate what you see, describe your plans for the day, or practice explaining something from your work. Nobody is watching — this is the most underrated speaking practice there is.</div>
+</div>
+<!-- READING -->
+<div class="panel" id="reading">
+<div class="banner banner-green">
+<h2>📖 Reading</h2>
+<p>You scored 15/15 — a perfect reading score. This is one of your greatest strengths. The goal here is not remediation but expansion: move into more complex texts, build professional reading stamina, and continue growing vocabulary through what you read every day.</p>
+</div>
+<div class="sec-title">Maintain &amp; Advance Your Reading</div>
+<div class="ex-grid">
+<div class="ex-card c-reading">
+<div class="ex-type">Reading · B2 · Official</div>
+<div class="ex-title">British Council B2 Reading Practice</div>
+<div class="ex-desc">Structured B2 reading exercises with texts including articles, emails, short stories, and reports. Each has preparation tasks and comprehension questions.</div>
+<a class="ex-link" href="https://learnenglish.britishcouncil.org/skills/reading/b2-reading" rel="noopener noreferrer" target="_blank">Open Exercises</a>
+</div>
+<div class="ex-card c-reading">
+<div class="ex-type">Reading · Authentic · News</div>
+<div class="ex-title">BBC Lingohack — News for Learners</div>
+<div class="ex-desc">Real BBC news clips adapted for language learners with vocabulary focus. Builds reading skill and professional vocabulary at the same time — both text and video.</div>
+<a class="ex-link" href="https://www.bbc.co.uk/learningenglish/english/features/lingohack" rel="noopener noreferrer" target="_blank">Open Articles</a>
+</div>
+<div class="ex-card c-reading">
+<div class="ex-type">Reading · Teens · B2</div>
+<div class="ex-title">British Council Teens B2 Reading</div>
+<div class="ex-desc">Varied B2 reading texts and exercises — a good complement to the main site. Topics range from science to culture to personal essays.</div>
+<a class="ex-link" href="https://learnenglishteens.britishcouncil.org/skills/reading/b2-reading" rel="noopener noreferrer" target="_blank">Open Exercises</a>
+</div>
+</div>
+<div class="sec-title">Reading for Vocabulary Growth</div>
+<div class="ex-grid">
+<div class="ex-card c-reading">
+<div class="ex-type">Reading · Vocabulary in Context · B2</div>
+<div class="ex-title">B1-B2 Vocabulary — British Council</div>
+<div class="ex-desc">Exercises that teach you to work out word meanings from context — a key B2 skill and one of the best ways to grow vocabulary naturally through reading.</div>
+<a class="ex-link" href="https://learnenglish.britishcouncil.org/vocabulary/b1-b2-vocabulary" rel="noopener noreferrer" target="_blank">Open Exercises</a>
+</div>
+<div class="ex-card c-reading">
+<div class="ex-type">Reading · News · Three Levels</div>
+<div class="ex-title">News in Levels — Upper-Intermediate</div>
+<div class="ex-desc">Real news stories written at three difficulty levels. Read Level 3 for B2 practice. If you want a real challenge, go to the original news source afterward.</div>
+<a class="ex-link" href="https://www.newsinlevels.com/level/level-3/" rel="noopener noreferrer" target="_blank">Open News</a>
+</div>
+<div class="ex-card c-reading">
+<div class="ex-type">Reading · Books · Free</div>
+<div class="ex-title">Project Gutenberg — Free Classic Books</div>
+<div class="ex-desc">Read classic English literature for free. Even 10 pages a week dramatically improves vocabulary and reading fluency over 8 weeks. Start with something you find interesting.</div>
+<a class="ex-link" href="https://www.gutenberg.org/browse/scores/top" rel="noopener noreferrer" target="_blank">Open Library</a>
+</div>
+</div>
+<div class="tip"><strong>💡 Reading habit:</strong> You're already great at reading comprehension — the next step is reading with a notes app open. Every time you see a word or phrase you don't know, write it down. Your reading strength is the fastest vehicle you have for growing vocabulary.</div>
+</div>
+<!-- SCHEDULE -->
+<div class="panel" id="schedule">
+<div class="banner banner-slate">
+<h2>📅 Weekly Study Schedule</h2>
+<p>Designed for 5–6 days a week, 45–60 minutes per day. It prioritizes vocabulary and grammar — your two biggest development areas — while keeping all other skills active. Adapt it to your life: consistency matters more than the exact timing.</p>
+</div>
+<div class="sec-title">Recommended Daily Routine</div>
+<table class="sched-table">
+<thead><tr><th>Day</th><th>Focus</th><th>Skills</th><th>Time</th></tr></thead>
+<tbody>
+<tr><td><strong>Monday</strong></td><td>Grammar Deep Dive</td><td><span class="tag tag-g">Grammar</span> <span class="tag tag-v">Vocabulary</span></td><td>50 min</td></tr>
+<tr><td><strong>Tuesday</strong></td><td>Listening + Vocabulary</td><td><span class="tag tag-l">Listening</span> <span class="tag tag-v">Vocabulary</span></td><td>45 min</td></tr>
+<tr><td><strong>Wednesday</strong></td><td>Writing Practice</td><td><span class="tag tag-w">Writing</span> <span class="tag tag-g">Grammar</span></td><td>50 min</td></tr>
+<tr><td><strong>Thursday</strong></td><td>Speaking + Pronunciation</td><td><span class="tag tag-s">Speaking</span> <span class="tag tag-l">Listening</span></td><td>45 min</td></tr>
+<tr><td><strong>Friday</strong></td><td>Reading + Vocabulary</td><td><span class="tag tag-r">Reading</span> <span class="tag tag-v">Vocabulary</span></td><td>45 min</td></tr>
+<tr><td><strong>Saturday</strong></td><td>Full Skill Review</td><td><span class="tag tag-g">Grammar</span> <span class="tag tag-w">Writing</span> <span class="tag tag-s">Speaking</span></td><td>60 min</td></tr>
+<tr><td><strong>Sunday</strong></td><td>Rest or Light Review</td><td>Flashcards only (10 min) or free day</td><td>10 min</td></tr>
+</tbody>
+</table>
+<div class="sec-title">8-Week Milestone Plan</div>
+<table class="sched-table">
+<thead><tr><th>Weeks</th><th>Main Focus</th><th>Goal by End of Period</th></tr></thead>
+<tbody>
+<tr><td><strong>Weeks 1–2</strong></td><td>Grammar Foundation</td><td>Zero subject-verb agreement errors in writing. Correct pronoun use (its vs your vs their).</td></tr>
+<tr><td><strong>Weeks 3–4</strong></td><td>Vocabulary Blitz</td><td>100+ new B2 words learned. Correct spelling of: building, weather, responsibility. 10 collocations memorized.</td></tr>
+<tr><td><strong>Weeks 5–6</strong></td><td>Writing &amp; Speaking</td><td>Write a 150-word email with fewer than 3 grammar errors. Record and review a 1-minute opinion monologue.</td></tr>
+<tr><td><strong>Weeks 7–8</strong></td><td>Integration &amp; Mock Test</td><td>Complete a full B2 practice test. Compare scores against your starting point. Write a final reflection in English.</td></tr>
+</tbody>
+</table>
+<div class="sec-title">Daily Non-Negotiables (Every Day, 15 Minutes)</div>
+<div class="ex-grid">
+<div class="ex-card c-vocab">
+<div class="ex-type">Daily · Vocabulary</div>
+<div class="ex-title">Flashcard Review — Quizlet or Anki</div>
+<div class="ex-desc">10 minutes every morning. Review yesterday's cards + 5 new ones. This one habit alone will significantly improve your vocabulary score over 8 weeks. Do it first.</div>
+<a class="ex-link" href="https://quizlet.com/subject/b2-vocabulary/" rel="noopener noreferrer" target="_blank">Open Quizlet</a>
+</div>
+<div class="ex-card c-writing">
+<div class="ex-type">Daily · Writing</div>
+<div class="ex-title">Write One Paragraph Then Check It</div>
+<div class="ex-desc">4–6 sentences about anything: your day, an opinion, a plan. Reread and fix one grammar error. Then paste into LanguageTool to check. 10 minutes. Do it before bed.</div>
+<a class="ex-link" href="https://languagetool.org/" rel="noopener noreferrer" target="_blank">Check with LanguageTool</a>
+</div>
+<div class="ex-card c-listen">
+<div class="ex-type">Daily · Listening</div>
+<div class="ex-title">BBC 6-Minute English — One Episode</div>
+<div class="ex-desc">One episode every single day. Read the transcript afterward and circle any word you didn't catch. This single habit builds listening fluency faster than anything else.</div>
+<a class="ex-link" href="https://www.bbc.co.uk/learningenglish/english/features/6-minute-english" rel="noopener noreferrer" target="_blank">Open BBC</a>
+</div>
+</div>
+<div class="tip"><strong>💡 Remember your why:</strong> You said English is both a professional goal and a personal one — "for me." That personal ownership is the most powerful motivator there is. Progress in language learning is rarely visible day-to-day, but it's always measurable month-to-month. Keep going.</div>
+</div>
+</div>
+<script>
+  function show(id, btn) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('on'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('on'));
+    document.getElementById(id).classList.add('on');
+    btn.classList.add('on');
+  }
+</script>
+</body>
+</html>
